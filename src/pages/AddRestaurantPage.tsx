@@ -382,6 +382,32 @@ export function AddRestaurantPage() {
                 </>
               )}
             </Button>
+
+            {/* Footer */}
+            <footer className="pt-8 text-center space-y-2">
+              <p className="text-sm text-muted-foreground">
+                Made with <span className="text-orange-500">🧡</span> by{' '}
+                <a
+                  href="https://primal.net/p/nprofile1qqsw7q2lh7j40c4rhdffu862f7uwhn3lak8dsr8ve2m0pa2wa202zscmyl6uh"
+                  className="text-primary hover:underline font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Jose
+                </a>
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Vibed with{' '}
+                <a
+                  href="https://shakespeare.diy"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shakespeare
+                </a>
+              </p>
+            </footer>
           </form>
         )}
       </main>

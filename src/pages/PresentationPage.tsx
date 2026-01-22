@@ -498,6 +498,19 @@ export function PresentationPage() {
         Use ← → arrow keys to navigate
       </div>
 
+      {/* Footer */}
+      <div className="fixed bottom-4 left-4 text-xs text-muted-foreground bg-background/80 backdrop-blur px-3 py-2 rounded-lg border hidden md:block">
+        Made with <span className="text-orange-500">🧡</span> by{' '}
+        <a
+          href="https://primal.net/p/nprofile1qqsw7q2lh7j40c4rhdffu862f7uwhn3lak8dsr8ve2m0pa2wa202zscmyl6uh"
+          className="text-primary hover:underline font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Jose
+        </a>
+      </div>
+
       {/* Keyboard navigation */}
       <div className="sr-only">
         <button onClick={goPrev}>Previous slide</button>

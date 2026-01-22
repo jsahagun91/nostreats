@@ -323,17 +323,31 @@ const Index = () => {
               Zap-only reviews. No ads, no fiat, no KYC.
             </p>
             
-            <p className="text-sm text-muted-foreground">
-              Vibed with{' '}
-              <a
-                href="https://shakespeare.diy"
-                className="text-primary hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Shakespeare
-              </a>
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
+              <p>
+                Made with <span className="text-orange-500">🧡</span> by{' '}
+                <a
+                  href="https://primal.net/p/nprofile1qqsw7q2lh7j40c4rhdffu862f7uwhn3lak8dsr8ve2m0pa2wa202zscmyl6uh"
+                  className="text-primary hover:underline font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Jose
+                </a>
+              </p>
+              <span className="hidden sm:inline text-muted-foreground/50">•</span>
+              <p>
+                Vibed with{' '}
+                <a
+                  href="https://shakespeare.diy"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shakespeare
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </footer>
