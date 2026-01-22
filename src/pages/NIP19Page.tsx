@@ -1,6 +1,8 @@
 import { nip19 } from 'nostr-tools';
 import { useParams } from 'react-router-dom';
 import NotFound from './NotFound';
+import { RestaurantPage } from './RestaurantPage';
+import { NOSTREATS_KINDS } from '@/lib/nostreats';
 
 export function NIP19Page() {
   const { nip19: identifier } = useParams<{ nip19: string }>();
@@ -21,20 +23,28 @@ export function NIP19Page() {
   switch (type) {
     case 'npub':
     case 'nprofile':
-      // AI agent should implement profile view here
-      return <div>Profile placeholder</div>;
+      // Profile view not implemented for NostrEats
+      return <NotFound />;
 
     case 'note':
-      // AI agent should implement note view here
-      return <div>Note placeholder</div>;
+      // Note view not implemented for NostrEats
+      return <NotFound />;
 
     case 'nevent':
-      // AI agent should implement event view here
-      return <div>Event placeholder</div>;
+      // Event view not implemented for NostrEats
+      return <NotFound />;
 
-    case 'naddr':
-      // AI agent should implement addressable event view here
-      return <div>Addressable event placeholder</div>;
+    case 'naddr': {
+      const { kind, pubkey, identifier: dTag } = decoded.data;
+      
+      // Handle restaurant profiles (kind 30023)
+      if (kind === NOSTREATS_KINDS.RESTAURANT_PROFILE) {
+        return <RestaurantPage pubkey={pubkey} identifier={dTag} />;
+      }
+      
+      // Other addressable events not supported
+      return <NotFound />;
+    }
 
     default:
       return <NotFound />;
