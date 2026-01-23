@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Decode npub</title>
+</head>
+<body>
+  <script type="module">
+    import { nip19 } from 'https://esm.sh/nostr-tools@2.13.0';
+    
+    const npub = 'npub1d9r528nf3qus8jnp2ml2feyxxweh3dywa6mrnqjmkusn7kz2qves9zghv5';
+    const decoded = nip19.decode(npub);
+    console.log('Hex pubkey:', decoded.data);
+    document.body.innerHTML = '<h1>Hex Pubkey:</h1><pre>' + decoded.data + '</pre>';
+  </script>
+</body>
+</html>

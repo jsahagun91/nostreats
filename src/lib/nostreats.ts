@@ -5,8 +5,8 @@ import type { NostrEvent } from '@nostrify/nostrify';
 // ============================================
 
 // Platform pubkey - receives all review zaps
-// This should be replaced with the actual NostrEats platform pubkey
-export const NOSTREATS_PUBKEY = 'nostreats_platform_pubkey_placeholder';
+// npub1d9r528nf3qus8jnp2ml2feyxxweh3dywa6mrnqjmkusn7kz2qves9zghv5
+export const NOSTREATS_PUBKEY = '6f47d5a8d9a81c0780f455a93249b3775dc6ed6db9b61c33a652737655051459';
 
 // Allowed zap amounts in sats
 export const ALLOWED_ZAP_AMOUNTS = [86, 420] as const;
