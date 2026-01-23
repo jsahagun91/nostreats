@@ -14,10 +14,21 @@
       ]
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/((?!.well-known).*)",
-      "destination": "/index.html"
+      "src": "/.well-known/nostr.json",
+      "dest": "/.well-known/nostr.json",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
