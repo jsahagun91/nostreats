@@ -1,5 +1,5 @@
 // NostrEats Service Worker - PWA Support
-const CACHE_NAME = 'nostreats-v1';
+const CACHE_NAME = 'nostreats-v1.01';
 const STATIC_CACHE = [
   '/',
   '/index.html',
