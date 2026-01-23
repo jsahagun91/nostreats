@@ -1,0 +1,44 @@
+{
+  "name": "NostrEats - Zap-Powered Restaurant Reviews",
+  "short_name": "NostrEats",
+  "description": "Discover restaurants with authentic, zap-verified reviews. No ads, no fiat, just sats and honest opinions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9f5",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "categories": ["food", "lifestyle", "social"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Explore Restaurants",
+      "short_name": "Explore",
+      "description": "Browse restaurants on the map",
+      "url": "/"
+    },
+    {
+      "name": "Add Restaurant",
+      "short_name": "Add",
+      "description": "Add a new restaurant",
+      "url": "/add"
+    }
+  ]
+}

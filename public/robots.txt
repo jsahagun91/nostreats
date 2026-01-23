@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /add
+
+Sitemap: https://nostreats.app/sitemap.xml

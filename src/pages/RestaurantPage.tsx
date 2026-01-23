@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSeoMeta } from '@unhead/react';
+import { StructuredData, createRestaurantSchema } from '@/components/StructuredData';
 import {
   MapPin,
   Phone,
@@ -56,6 +57,22 @@ export function RestaurantPage({ pubkey, identifier }: RestaurantPageProps) {
     description: restaurant?.about || restaurant?.content || 'View reviews on NostrEats',
   });
 
+  // Structured data for SEO
+  const restaurantSchema = useMemo(() => {
+    if (!restaurant) return null;
+    return createRestaurantSchema({
+      name: restaurant.name,
+      description: restaurant.about || restaurant.content,
+      address: restaurant.address,
+      phone: restaurant.phone,
+      website: restaurant.website,
+      lat: restaurant.lat,
+      lng: restaurant.lng,
+      rating: averageRating,
+      reviewCount: totalReviewCount,
+    });
+  }, [restaurant, averageRating, totalReviewCount]);
+
   const handleShare = async () => {
     const url = window.location.href;
     if (navigator.share) {
@@ -105,6 +122,9 @@ export function RestaurantPage({ pubkey, identifier }: RestaurantPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Structured Data for SEO */}
+      {restaurantSchema && <StructuredData data={restaurantSchema} />}
+
       {/* Header */}
       <header className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="container max-w-4xl flex items-center justify-between h-14 px-4">

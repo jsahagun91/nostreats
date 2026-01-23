@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSeoMeta } from '@unhead/react';
 import { nip19 } from 'nostr-tools';
+import { StructuredData, organizationSchema, webApplicationSchema } from '@/components/StructuredData';
 import {
   Zap,
   MapPin,
@@ -66,6 +67,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Structured Data for SEO */}
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={webApplicationSchema} />
+
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="container max-w-6xl flex items-center justify-between h-16 px-4">
