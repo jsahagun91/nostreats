@@ -146,32 +146,53 @@ const Index = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.15),transparent_50%)]" />
           
           <div className="container max-w-6xl px-4 py-16 md:py-24 relative">
-            <div className="max-w-2xl space-y-6">
-              <Badge variant="secondary" className="gap-1.5 px-3 py-1">
-                <Zap className="h-3 w-3 fill-lightning text-lightning" />
-                Zap-Powered Reviews
-              </Badge>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                Discover Restaurants.
-                <br />
-                <span className="text-primary">Pay with Sats.</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                NostrEats is a zap-only restaurant review platform where reviews cost sats, 
-                opinions are immutable, and trust is earned.
-              </p>
-              
-              <div className="flex flex-wrap gap-3">
-                <Button size="lg" className="gap-2" onClick={() => document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' })}>
-                  <MapPin className="h-4 w-4" />
-                  Explore Restaurants
-                </Button>
-                <Button size="lg" variant="outline" className="gap-2" onClick={() => navigate('/add')}>
-                  <Plus className="h-4 w-4" />
-                  Add a Restaurant
-                </Button>
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              {/* Text content */}
+              <div className="space-y-6">
+                <Badge variant="secondary" className="gap-1.5 px-3 py-1">
+                  <Zap className="h-3 w-3 fill-lightning text-lightning" />
+                  Zap-Powered Reviews
+                </Badge>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                  Discover Restaurants.
+                  <br />
+                  <span className="text-primary">Pay with Sats.</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  NostrEats is a zap-only restaurant review platform where reviews cost sats, 
+                  opinions are immutable, and trust is earned.
+                </p>
+                
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="gap-2" onClick={() => document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                    <MapPin className="h-4 w-4" />
+                    Explore Restaurants
+                  </Button>
+                  <Button size="lg" variant="outline" className="gap-2" onClick={() => navigate('/add')}>
+                    <Plus className="h-4 w-4" />
+                    Add a Restaurant
+                  </Button>
+                </div>
+              </div>
+
+              {/* Hero image */}
+              <div className="relative hidden md:block">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 rounded-3xl blur-2xl" />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                  <img
+                    src="https://blossom.dreamith.to/57c7065727930e1f274a05b617d6d3790492375a4858d2074ac39125abadcf3b.webp"
+                    alt="Gourmet smash burger with melted cheddar on a brioche bun"
+                    className="w-full h-[420px] object-cover"
+                    loading="eager"
+                  />
+                  {/* Subtle overlay badge */}
+                  <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                    <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                    <span>Zap to review</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
